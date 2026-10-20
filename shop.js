@@ -19,7 +19,7 @@ const products = [
         category: 'bond',
         name: '10X Tile Bond',
         tagline: 'Extra Performance Adhesive · 20kg',
-        price: 800,
+        price: 8000,
         unit: 'bag',
         image: 'images/10X-main.png',
         badge: '10X Grip',
