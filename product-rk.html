@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerPlus Bond | PowerPak Industries</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+</head>
+<body class="product-page">
+     <nav class="glass-nav">
+    <div class="logo-wrap">
+        <div class="logo-icon"><img src="/images/logo.png" alt="PowerPak logo"></div>
+        <div class="logo-text">
+            <span>Power Pak Industries</span>
+            <span>Tile Adhesive Manufacturer</span>
+        </div>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#products">Products</a></li>
+    </ul>
+</nav>
+
+    <div class="container">
+        <section class="product-grid">
+            <div class="product-visuals">
+                <div class="main-image-box">
+                    <img src="images/rk-main.jpeg" alt="RK Bond" id="featured">
+                </div>
+                <div class="thumbnails">
+                    <img src="images/rk-main.jpeg"class="active" onclick="gallery(this)">
+                    <img src="images/application1.png" onclick="gallery(this)">
+                    <img src="images/texture-macro.png" onclick="gallery(this)">
+                </div>
+            </div>
+            <div class="product-info">
+                <div class="tag-row">
+                    <span class="badge" style="background: rgba(215, 43, 43, 0.1); color: var(--red);">Structural Grade</span>
+                    <span class="badge">Heavy Duty</span>
+                </div>
+                <h1>RK <span class="highlight">Structural Bond</span></h1>
+                <p class="description">
+                    The foundation of reliability. RK Bond is a heavy-duty, polymer-fortified 
+                    adhesive designed for high-traffic flooring, external cladding, and 
+                    large-scale commercial installations where bond failure is not an option.
+                </p>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fa-solid fa-truck-monster"></i>
+                        <div><strong>Impact Resistant</strong><p style="font-size:12px; color:#666">Absorbs heavy vibrations</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-trowel-bricks"></i>
+                        <div><strong>Sag Resistant</strong><p style="font-size:12px; color:#666">Ideal for vertical stone</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-warehouse"></i>
+                        <div><strong>Commercial Ready</strong><p style="font-size:12px; color:#666">High-traffic durability</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fa-solid fa-hammer"></i>
+                        <div><strong>Shock Proof</strong><p style="font-size:12px; color:#666">Structural integrity</p></div>
+                    </div>
+                </div>
+
+               <div class="calculator-container">
+
+                     <!-- BUTTON ROW -->
+                    <div class="action-row">
+
+                        <!-- CALCULATE BUTTON -->
+                      <button class="btn-main small-btn" onclick="togglePanel('calc')" id="calcBtn">
+                       <i class="fa-solid fa-calculator"></i>
+                        Calculate Coverage
+                     </button>
+
+                       <!-- ORDER BUTTON -->
+                      <button class="btn-order-main small-btn" onclick="openQtyModal('rk-tile-bond')" id="orderBtn">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                       Add to Cart
+                     </button>
+
+                      <a class="btn-view-cart small-btn" href="shop.html" aria-label="View cart for RK Tile Bond">
+                       <i class="fa-solid fa-bag-shopping"></i>
+                        View Cart
+                      </a>
+
+                    </div>
+
+                     <!-- CALCULATOR PANEL -->
+                  <div id="coverageCalc" class="quote-calculator panel">
+                    <h3>Coverage <span class="highlight">Estimator</span></h3>
+
+                    <div class="input-group">
+                      <input type="number" id="sqftInput" placeholder="Total Area Size" oninput="calculateBags()">
+                       <span class="unit">SQFT</span>
+                    </div>
+                    <div class="quote-results">
+                      <div class="res-item">
+                      <span>Bags Needed:</span>
+                      <span class="highlight" id="bagsResult">0</span>
+                    </div>
+                    <div class="res-item">
+                        <span>Total Weight:</span>
+                        <span id="weightResult">0 kg</span>
+                    </div>
+                 </div>
+               </div>
+
+                   <!-- ORDER PANEL -->
+                <div id="orderBox" class="quote-calculator panel">
+
+                <h3>Place <span class="highlight">Order</span></h3>
+
+                 <input type="text" id="name" placeholder="Your Name">
+                 <input type="text" id="phone" placeholder="Phone Number">
+                 <input type="text" id="address" placeholder="Address" required>
+
+                 <input type="number" id="qty" placeholder="Bags Required" oninput="updateTotal()">
+
+                 <p class="total-line">
+                    Total: <span id="totalPrice">0</span> PKR
+                  </p>
+
+                 <button class="btn-confirm" onclick="sendOrder()">
+                   Confirm on WhatsApp
+                 </button>
+                 </div>
+              </div>
+           </div>
+        </div>
+        </section>
+
+          <section class="application-workflow">
+    <div class="workflow-header">
+        <h2>Professional <span class="highlight">Application Guide</span></h2>
+        <p>Master the deca-strength bond with our precision-engineered workflow.</p>
+    </div>
+    
+    <div class="workflow-grid">
+        <div class="workflow-card" data-step="01">
+            <div class="card-header">
+                <div class="step-icon"><i class="fa-solid fa-broom"></i></div>
+                <div class="step-number">01</div>
+            </div>
+            <h3>Surface Preparation</h3>
+            <p>Ensure the surface is clean, dry, and free from dust or grease to promote maximum polymer anchoring.</p>
+        </div>
+
+        <div class="workflow-card" data-step="02">
+            <div class="card-header">
+                <div class="step-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+                <div class="step-number">02</div>
+            </div>
+            <h3>Mixing Process</h3>
+            <p>Mix with water to a smooth, lump-free consistency. Let stand for 5 mins to activate chemical bonds.</p>
+        </div>
+
+        <div class="workflow-card" data-step="03">
+            <div class="card-header">
+                <div class="step-icon"><i class="fa-solid fa-trowel-bricks"></i></div>
+                <div class="step-number">03</div>
+            </div>
+            <h3>Even Application</h3>
+            <p>Apply evenly using a notched trowel. For large slabs, ensure 100% coverage on both tile and substrate.</p>
+        </div>
+
+        <div class="workflow-card" data-step="04">
+            <div class="card-header">
+                <div class="step-icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="step-number">04</div>
+            </div>
+            <h3>Placement & Set</h3>
+            <p>Press tiles firmly. Adjust alignment within the 45-min open time. Allow to dry fully before grouting.</p>
+        </div>
+    </div>
+</section>
+
+        <section class="specs-wrapper">
+            <h2>Technical <span class="highlight">Data Sheet</span></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Technical Property</th>
+                        <th>Standard Req.</th>
+                        <th>PowerPlus Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="prop-name">Apperance</td>
+                        <td class="prop-val">Gray Powder</td>
+                        <td class="prop-res">Gray Powder</td>
+                    </tr>
+                    <tr>
+                        <td class="prop-name">Tensile Adhesion Strength</td>
+                        <td class="prop-val">>0.5 N/mm²</td>
+                        <td class="prop-res">0.65 N/mm²</td>
+                    </tr>
+                    <tr>
+                        <td class="prop-name">Shelf Life</td>
+                        <td class="prop-val">6 - 8 months</td>
+                        <td class="prop-res">10 - 12 months</td>
+                    </tr>
+                    <tr>
+                        <td class="prop-name">Mixing Ratio</td>
+                        <td class="prop-val">> 20 - 25% water weight</td>
+                        <td class="prop-res"> 20 - 25% water weight</td>
+                    </tr>
+                    <tr>
+                        <td class="prop-name">Open Time</td>
+                        <td class="prop-val">> 20 Minutes</td>
+                        <td class="prop-res">> 30 Minutes</td>
+                    </tr>
+                    <tr>
+                        <td class="prop-name">Adjustment Time</td>
+                        <td class="prop-val">10 - 15 Minutes</td>
+                        <td class="prop-res">20 - 25 Minutes</td>
+                    </tr>
+                    <tr>
+                        <td class="prop-name">Curing Time (Foot Traffic)</td>
+                        <td class="prop-val">24 Hours</td>
+                        <td class="prop-res">20 - 24 Hours</td>
+                    </tr>
+                    <tr>
+                        <td class="prop-name">Application Thickness</td>
+                        <td class="prop-val">3 - 6 mm</td>
+                        <td class="prop-res">3 - 6 mm</td>
+                    </tr>
+                    <tr>
+                        <td class="prop-name">Pot Life</td>
+                        <td class="prop-val">2 - 3 Hours</td>
+                        <td class="prop-res">4 - 5 Hours</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>

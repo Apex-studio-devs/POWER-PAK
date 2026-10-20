@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Power Pak Industries</title>
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+<header class="shop-navbar">
+    <a href="index.html" class="brand-wrap" aria-label="Power Pak Industries Home">
+        <span class="brand-logo"><img src="/images/logo.png" alt="Power Pak Industries"></span>
+        <span class="brand-text">
+            <strong>Power Pak Industries</strong>
+            <small>Tile Adhesive Manufacturer</small>
+        </span>
+    </a>
+
+    <nav class="shop-nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#products">Products</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <button class="cart-trigger" type="button" onclick="openCart()">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span>Cart</span>
+        <b id="cartCount">0</b>
+    </button>
+</header>
+
+<main>
+    <section class="shop-hero">
+        <div class="hero-copy">
+            <span class="eyebrow">Official Power Pak Store</span>
+            <h1>Shop bond and filling products</h1>
+            <p>Choose tile adhesive bags including our new 10X C2T Quality (3,000 PKR) and RK C2T Quality (1,500 PKR) or Power Pak filling colors, add quantity to cart, and confirm your order through WhatsApp or company email.</p>
+            <div class="hero-actions">
+                <a href="#products" class="primary-shop-btn">Shop Products</a>
+                <button class="secondary-shop-btn" type="button" onclick="openCart()">View Cart</button>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h3>Fast Dispatch</h3>
+            <p>Bulk and retail orders available. Company team confirms stock and delivery before final dispatch.</p>
+        </div>
+    </section>
+
+    <section class="shop-toolbar" id="products">
+        <div>
+            <span class="eyebrow">Power Pak Store</span>
+            <h2>Available Products</h2>
+        </div>
+    </section>
+
+    <section class="shop-tabs" aria-label="Shop categories">
+        <button class="shop-tab-btn active" type="button" data-category="bond" onclick="switchShopCategory('bond', this)">
+            <i class="fa-solid fa-layer-group"></i>
+            Power Pak Bond
+        </button>
+        <button class="shop-tab-btn" type="button" data-category="filling" onclick="switchShopCategory('filling', this)">
+            <i class="fa-solid fa-palette"></i>
+            Power Pak Filling
+        </button>
+    </section>
+
+    <section class="category-intro" id="categoryIntro"></section>
+    <section class="product-grid" id="productGrid"></section>
+</main>
+
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-panel">
+        <div class="cart-header">
+            <div>
+                <span class="eyebrow">Checkout</span>
+                <h2>Your Cart</h2>
+            </div>
+            <button class="icon-btn" type="button" onclick="closeCart()" aria-label="Close cart">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="cart-summary">
+            <div><span>Subtotal</span><strong id="cartSubtotal">0 PKR</strong></div>
+            <small>Delivery charges will be confirmed by Power Pak team.</small>
+        </div>
+
+        <form class="checkout-form" id="checkoutForm" onsubmit="submitOrder(event)">
+            <h3>Customer Details</h3>
+            <input type="text" id="customerName" placeholder="Full Name" required>
+            <input type="tel" id="customerPhone" placeholder="Phone / WhatsApp Number" required>
+            <input type="email" id="customerEmail" placeholder="Enter your email">
+            <input type="text" id="customerCity" placeholder="City" required>
+            <textarea id="customerAddress" placeholder="Complete Address" required></textarea>
+            <textarea id="customerNotes" placeholder="Notes (optional)"></textarea>
+
+            <button class="checkout-btn whatsapp" type="submit">
+                <i class="fa-brands fa-whatsapp"></i>
+                Send Order on WhatsApp
+            </button>
+
+            <button class="checkout-btn email" type="button" onclick="sendOrderEmailOnly()">
+                <i class="fa-solid fa-envelope"></i>
+                Send Order to Company Email
+            </button>
+        </form>
+    </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script src="shop.js"></script>
+</body>
+</html>

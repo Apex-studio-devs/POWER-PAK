@@ -1,0 +1,665 @@
+:root {
+    --red: #d72b2b;
+    --orange: #e8621a;
+    --gold: #ffb400;
+    --bg: #050505;
+    --bg-dark: #050505;
+    --text-main: #ffffff;
+    --text-dim: rgba(255, 255, 255, 0.6);
+    --transition-smooth: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    --card: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+body.legacy-body {
+    background-color: var(--bg);
+    color: #fff;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+}
+nav a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: linear-gradient(90deg, var(--red), var(--yellow));
+  transition: 0.3s;
+}
+
+nav a:hover { color: var(--yellow); }
+/* Glass Navbar */
+.glass-nav {
+    padding: 20px 8%;
+    background: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+/* --- HAMBURGER STYLING --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: #ffffff; /* YOUR WHITE COLOR */
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 992px) {
+    .glass-nav {
+        justify-content: space-between;
+        padding: 15px 5%;
+    }
+
+    .menu-toggle {
+        display: flex; /* Show the 3 lines on mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide default list */
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 100%;
+        background: rgba(5, 5, 5, 0.95);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        padding: 20px 0;
+        list-style: none;
+        border-bottom: 2px solid var(--red);
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when toggled */
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        text-align: center;
+    }
+}
+
+/* HAMBURGER ANIMATION TO 'X' */
+.menu-toggle.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+.menu-toggle.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+/* --- HERO SECTION CONTAINER --- */
+.legacy-hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-dark);
+    /* Radial gradient creates a "spotlight" on the center text */
+    background: radial-gradient(circle at center, #1a0808 0%, #050505 100%);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* --- CINEMATIC TEXT STYLING --- */
+.hero-inner {
+    z-index: 2;
+    perspective: 1000px; /* Preps for 3D smooth movement */
+}
+
+.reveal-type {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(3.5rem, 12vw, 9rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--text-main);
+    line-height: 0.85;
+    margin: 0;
+    letter-spacing: -2px;
+    /* Smooth entrance animation */
+    animation: smoothFocus 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.text-glow {
+    color: var(--red);
+    display: inline-block;
+    position: relative;
+    text-shadow: 0 0 15px rgba(215, 43, 43, 0.4);
+    transition: var(--transition-smooth);
+}
+
+/* Hover effect: The red text "Legacy" glows brighter when you hover the hero */
+.legacy-hero:hover .text-glow {
+    text-shadow: 0 0 40px rgba(215, 43, 43, 0.8), 0 0 80px rgba(215, 43, 43, 0.4);
+    transform: scale(1.02);
+}
+
+/* --- PHILOSOPHY TAG (We Believe in Power) --- */
+.philosophy-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(14px, 2vw, 18px);
+    text-transform: uppercase;
+    letter-spacing: 15px; /* Wide, high-end spacing */
+    color: var(--orange);
+    margin: 30px 0;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideUpSmooth 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+/* --- SUBTITLE TEXT --- */
+.reveal-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(16px, 1.2vw, 20px);
+    color: var(--text-dim);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+    opacity: 0;
+    animation: slideUpSmooth 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
+}
+
+/* --- BACKGROUND ANIMATIONS (Smooth Motion) --- */
+
+/* The Grainy Texture Overlay */
+.legacy-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+    opacity: 0.08;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Floating Ambient Light */
+.legacy-hero::after {
+    content: "";
+    position: absolute;
+    width: 150vw;
+    height: 150vh;
+    background: radial-gradient(circle, rgba(215, 43, 43, 0.03) 0%, transparent 60%);
+    top: -25%;
+    left: -25%;
+    animation: ambientFloat 12s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* --- KEYFRAMES FOR SMOOTHNESS --- */
+
+@keyframes smoothFocus {
+    0% {
+        opacity: 0;
+        filter: blur(30px);
+        transform: scale(1.15) translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes slideUpSmooth {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ambientFloat {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(5%, 5%); }
+    66% { transform: translate(-3%, 8%); }
+}
+
+/* --- RESPONSIVE TWEAKS --- */
+@media (max-width: 768px) {
+    .reveal-type {
+        letter-spacing: -1px;
+    }
+    .philosophy-tag {
+        letter-spacing: 8px;
+    }
+}
+/* Story Section */
+/* --- DESKTOP (Default) --- */
+.story-section { 
+    padding: 100px 8%; 
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.section-tag {
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 14px;
+}
+
+.story-text h3 { 
+    font-size: 40px; 
+    margin: 10px 0 30px; 
+    font-family: 'Barlow Condensed'; 
+}
+
+.story-text p { 
+    font-size: 18px; 
+    color: #ccc; 
+    line-height: 1.8; 
+    margin-bottom: 20px; 
+}
+
+.glass-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 60px;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.stat-number { 
+    font-size: 80px; 
+    font-weight: 900; 
+    color: var(--red); 
+    display: block; 
+}
+
+/* --- MOBILE "SANDWICH" FIX (Grid Version) --- */
+@media (max-width: 992px) {
+    .story-section {
+        padding: 60px 5%;
+    }
+
+    .story-grid {
+        display: grid; /* Switch to grid for perfect layering */
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 0;
+    }
+
+    /* Dissolve the wrappers */
+    .story-text, .story-visual, .container {
+        display: contents; 
+    }
+
+    /* ROW 1: The Labels */
+    .section-tag { 
+        grid-row: 1; 
+        margin-bottom: 10px;
+    }
+
+    .story-text h3 { 
+        grid-row: 2; 
+        font-size: 32px; 
+        margin-bottom: 20px; 
+    }
+
+    /* ROW 2: The Glass Card (The "Book Note") */
+    .story-visual {
+        display: block; /* Re-enable for the wrapper */
+        grid-row: 3;
+        margin: 20px 0 40px 0;
+    }
+
+    .glass-card {
+        padding: 40px 20px;
+        max-width: 300px;
+        margin: 0 auto;
+        border: 1px solid rgba(215, 43, 43, 0.5);
+    }
+
+    /* ROW 3: All Paragraphs move below */
+    .story-text p {
+        grid-row: 4; 
+        font-size: 16px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    .stat-number {
+        font-size: 60px;
+    }
+}
+
+/* 480px Tweaks */
+@media (max-width: 480px) {
+    .story-text h3 { font-size: 26px; }
+    .stat-number { font-size: 50px; }
+}
+
+/* --- JOURNEY SECTION --- */
+.journey-narrative {
+    padding: 100px 8%;
+    background: #080808;
+}
+
+.journey-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.journey-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.journey-header h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 42px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.journey-grid {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* --- JOURNEY CARDS --- */
+.journey-card {
+    flex: 1;
+    background: #0c0c0c;
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+/* Permanent Bold Lighting Border for Lahore (Current) */
+.highlighted-card {
+    border: 3px solid var(--red);
+    box-shadow: 0 0 25px rgba(215, 43, 43, 0.3);
+}
+
+.journey-year {
+    font-family: 'Barlow Condensed';
+    color: var(--orange);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.journey-card h4 {
+    font-family: 'Barlow Condensed';
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.journey-card p {
+    color: #a0a0a0;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* The Connecting Arrow */
+.journey-arrow {
+    font-size: 30px;
+    color: var(--red);
+    opacity: 0.5;
+}
+
+/* --- HOVER EFFECT --- */
+.journey-card:hover {
+    transform: translateY(-10px);
+    background: #111;
+    border-color: var(--orange);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .journey-grid {
+        flex-direction: column;
+    }
+    .journey-arrow {
+        transform: rotate(90deg);
+        margin: 20px 0;
+    }
+}
+/* Pillars Grid */
+.pillars-section { padding: 100px 8%; background: #080808; }
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* --- THE PILLAR CARD --- */
+.pillar-card {
+    background: #0c0c0c;
+    /* Permanent Bold Lighting Border */
+    border: 2px solid rgba(215, 43, 43, 0.3); 
+    border-radius: 20px;
+    padding: 20px; /* Space between the card border and the image/content */
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+}
+
+/* --- THE IMAGE BOX (Fixed Inside) --- */
+.pillar-img-box {
+    width: 100%;
+    height: 300px; /* Fixed height for all pillar images */
+    border-radius: 15px; /* Rounded corners inside the card */
+    overflow: hidden; /* This keeps the image "fixed" inside */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pillar-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the box without stretching */
+    filter: grayscale(100%); /* Cinematic legacy look */
+    transition: all 0.6s ease;
+}
+
+/* --- PILLAR CONTENT --- */
+.pillar-content h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--red);
+    font-size: 26px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.pillar-content p {
+    color: #a0a0a0;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- HOVER STATE --- */
+.pillar-card:hover {
+    border-color: var(--red); /* Brightens the lighting border */
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(215, 43, 43, 0.2);
+}
+
+.pillar-card:hover img {
+    filter: grayscale(0%); /* Returns color on hover */
+    transform: scale(1.05); /* Subtle zoom inside the fixed box */
+}
+.pillar-icon { font-size: 40px; font-weight: 900; color: rgba(255,255,255,0.05); margin-bottom: 20px; }
+
+/* --- FACTORY SPOTLIGHT SECTION --- */
+.factory-spotlight {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Side-by-side layout */
+    gap: 30px; /* The gap between the two boxes */
+    padding: 80px 8%;
+    background-color: #050505;
+}
+
+/* --- THE SPOTLIGHT BOX --- */
+.spotlight-box {
+    position: relative;
+    height: 400px;
+    border-radius: 25px; /* Large, modern rounded corners */
+    overflow: hidden;
+    /* The "Lighting Border" - using a subtle gradient border */
+    border: 2px solid rgba(255, 255, 255, 0.132);
+    box-shadow: 0 0 0 rgba(215, 43, 43, 0); /* Initial state */
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- IMAGE STYLING --- */
+.spotlight-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7) contrast(1.1); /* Industrial moody look */
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                filter 0.8s ease;
+}
+
+/* --- THE OVERLAY (TEXT) --- */
+.spotlight-box .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.spotlight-box h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 32px;
+    color: var(--red); /* #d72b2b */
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.5s ease 0.1s;
+}
+
+.spotlight-box p {
+    font-family: 'Inter', sans-serif;
+    color: #cccccc;
+    font-size: 16px;
+    margin: 0;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.5s ease 0.2s;
+}
+
+/* --- HOVER EFFECTS (The Drama) --- */
+
+.spotlight-box:hover {
+    /* Glowing Border Effect */
+    border-color: rgba(215, 43, 43, 0.6);
+    box-shadow: 0 0 30px rgba(215, 43, 43, 0.25);
+    transform: translateY(-5px);
+}
+
+.spotlight-box:hover img {
+    transform: scale(1.1); /* Smooth zoom in */
+    filter: brightness(0.5) contrast(1.2); /* Darken to make text pop */
+}
+
+/* Slide up text on hover */
+.spotlight-box:hover h4,
+.spotlight-box:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- SHINE ANIMATION (Lighting Border Sweep) --- */
+.spotlight-box::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    transition: all 0.8s ease;
+    pointer-events: none;
+}
+
+.spotlight-box:hover::after {
+    left: 120%; /* Shine moves across the box on hover */
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 992px) {
+    .factory-spotlight {
+        grid-template-columns: 1fr; /* Stack images on mobile */
+        gap: 20px;
+    }
+    .spotlight-box {
+        height: 350px;
+    }
+}
+/* footer */
+.legacy-footer {
+  text-align: center;
+  margin: 20px 0px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(90, 84, 84, 0.489);
+}
+
+.legacy-footer p {
+  color:#ccc;
+  font-size: 15px;
+}
+strong {
+ color: #cac8c8;
+}
+/* Small phones */
+@media (max-width: 480px) {
+  .story-text h3 { font-size: 28px; }
+  .story-text p { font-size: 15px; }
+  .stat-number { font-size: 48px; }
+  .pillar-img-box { height: 200px; }
+  .spotlight-box { height: 280px; }
+  .journey-card h4 { font-size: 22px; }
+}
+
+/* Ultra-small devices */
+@media (max-width: 360px) {
+  .reveal-type { font-size: clamp(2.2rem, 9vw, 3.5rem); }
+  .philosophy-tag { letter-spacing: 4px; font-size: 12px; }
+  .story-text h3 { font-size: 24px; }
+  .journey-card p { font-size: 14px; }
+}
+@media (max-width: 760px) {
+  .pillar-img-box img,
+  .spotlight-box img {
+    filter: none !important;
+  }
+}

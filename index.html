@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power Pak Industries</title>
+
+<link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="logo-wrap">
+    <div class="logo-icon"><img src="/images/logo.png" alt="PowerPak logo"></div>
+    <div class="logo-text">
+      <span>Power Pak Industries</span>
+      <span>Tile Adhesive Manufacturer</span>
+    </div>
+  </div>
+  <div class="menu-toggle" id="mobile-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="nav-menu">
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#features">Why Us</a>
+    <a href="#contact">Contact</a>
+    <!-- In index.html -->
+    <a href="shop.html" class="shop-now-btn">Shop Now</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">Pakistan's Trusted Manufacturer Since 2014</div>
+    <h1>
+      <span class="line1">Power Pak</span>
+      <span class="line2">Industries</span>
+    </h1>
+    <p>Super Strong · Water Resistant · Long Lasting</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+        Explore Products
+      </button>
+      <a class="btn-primary shop-hero-cta" href="shop.html">
+        Shop Now
+      </a>
+      <button class="btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        Contact Us
+      </button>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat"><h3>500+</h3><p>Projects Done</p></div>
+    <div class="hero-stat"><h3>99%</h3><p>Client Satisfaction</p></div>
+    <div class="hero-stat"><h3>10+</h3><p>Products Range</p></div>
+    <div class="hero-stat"><h3>24h</h3><p>Response Time</p></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about reveal">
+  <div class="about-text">
+    <div class="section-label">Who We Are</div>
+    <h2 class="section-title">Power Pak <span>Industries</span></h2>
+    <p>
+      Power Pak Industries (Pvt) Ltd is Pakistan's leading manufacturer of high-performance
+      tile adhesive solutions. Based in Lahore's industrial zone, we produce a full range of
+      polymer-modified cement adhesives trusted by contractors, builders, and developers
+      across the country.
+    </p>
+    <div style="margin-top: 20px; margin-bottom: 30px;">
+        <a href="history.html" class="btn-main" style="padding: 12px 35px; text-decoration: none; display: inline-block;">
+            Explore Our Legacy
+        </a>
+    </div>
+    <div class="about-address">
+      <i class="fa-solid fa-location-dot" style="color:var(--red); margin-right:8px;"></i>
+      33-A, Block C PCSIR Staff College Road Ameer Chowk, Lahore, Punjab, Pakistan
+    </div>
+  </div>
+
+  <div class="about-right">
+    <div class="about-card">
+      <div class="icon"> <i class="fa-solid fa-industry"></i></div>
+      <h4>Own Factory</h4>
+      <p>In-house manufacturing</p>
+    </div>
+    <div class="about-card">
+      <div class="icon"> <i class="fa-solid fa-flask-vial"></i></div>
+      <h4>Lab Tested</h4>
+      <p>Quality controlled</p>
+    </div>
+    <div class="about-card">
+      <div class="icon"><i class="fa-solid fa-truck-fast"></i></div>
+      <h4>Fast Supply</h4>
+      <p>Nationwide delivery</p>
+    </div>
+    <div class="about-card">
+      <div class="icon"> <i class="fa-solid fa-briefcase"></i></div>
+      <h4>Bulk Orders</h4>
+      <p>Wholesale available</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="products-section">
+  <div class="products-header reveal">
+    <div class="section-label">What We Make</div>
+    <h2 class="section-title">Our <span>Product Range</span></h2>
+    <p style="color:var(--text-muted); max-width:550px; margin:0 auto; font-size:15px; line-height:1.7;">
+      Click on any product to see full specifications. We manufacture two main product lines under the Power Pak brand.
+    </p>
+  </div>
+
+  <div class="product-tabs reveal">
+    <button class="tab-btn active" onclick="switchTab('bonds', this)">
+      <i class="fa-solid fa-layer-group" style="margin-right:8px;"></i>Power Pak Bond
+    </button>
+    <button class="tab-btn" onclick="switchTab('filing', this)">
+      <i class="fa-solid fa-palette" style="margin-right:8px;"></i>Power Pak Filing
+    </button>
+  </div>
+
+  <!-- ── BONDS PANEL ── -->
+  <div id="panel-bonds" class="panel active">
+  <div class="bonds-grid">
+
+     <div class="bond-card reveal" onclick="location.href='product-10x-c2te.html'">
+      <div class="coming-soon-tag">Coming Soon</div>
+      <div class="bond-img-wrap">
+        <img src="images/10X-main-c2te.png" alt="10X Tile Bond Bag">
+      </div>
+      <div class="bond-card-top">
+        <div class="bond-content">
+          <div class="tag" style="background:rgba(245,166,35,0.15);color:var(--yellow);">Most Premium (C2TE) </div>
+          <h3>10X Tile Bond (C2TE) </h3>
+          <p>Extra Performance Adhesive · 20kg</p>
+        </div>
+        <div class="bond-arrow"><i class="fa-solid fa-arrow-right-long"></i></div>
+      </div>
+      </div>
+
+     <div class="bond-card reveal" onclick="location.href='product-rk-c2.html'">
+      <div class="coming-soon-tag">Most Selling</div>
+      <div class="bond-img-wrap">
+        <img src="images/rk-main-c2.png" alt="RK Tile Bond Bag">
+      </div>
+      <div class="bond-card-top">
+        <div class="bond-content">
+          <div class="tag" style="background:rgba(50,180,80,0.15);color:#72e891;">Strong Grip C2 </div>
+          <h3>RK Tile Bond (C2)</h3>
+          <p>High Adhesion Formula · 20kg</p>
+        </div>
+        <div class="bond-arrow"><i class="fa-solid fa-arrow-right-long"></i></div>
+      </div>
+
+    </div>
+     <div class="bond-card reveal" onclick="location.href='product-10x.html'">
+      <div class="coming-soon-tag">Newly Launch</div>
+      <div class="bond-img-wrap">
+        <img src="images/10X-main.png" alt="10X Tile Bond Bag">
+      </div>
+      <div class="bond-card-top">
+        <div class="bond-content">
+          <div class="tag" style="background:rgba(245,166,35,0.15);color:var(--yellow);">10X Grip</div>
+          <h3>10X Tile Bond</h3>
+          <p>Extra Performance Adhesive · 20kg</p>
+        </div>
+        <div class="bond-arrow"><i class="fa-solid fa-arrow-right-long"></i></div>
+      </div>
+    </div>
+
+   <div class="bond-card reveal" onclick="location.href='product-max.html'">
+      <div class="coming-soon-tag">Recommended</div>
+      <div class="bond-img-wrap">
+        <img src="images/max-main.png" alt="MAX Tile Bond Bag">
+      </div>
+      <div class="bond-card-top">
+        <div class="bond-content">
+          <div class="tag" style="background:rgba(50, 180, 80, 0.15);color:#72e891;">5x Plus Grip</div>
+          <h3>MAX Tile Bond</h3>
+          <p>Industrial Strength · 20kg</p>
+        </div>
+        <div class="bond-arrow"><i class="fa-solid fa-arrow-right-long"></i></div>
+      </div>
+    </div>
+
+    <div class="bond-card reveal" onclick="location.href='product-rk.html'">
+      <div class="coming-soon-tag">Most Selling</div>
+      <div class="bond-img-wrap">
+        <img src="images/rk-main.jpeg" alt="RK Tile Bond Bag">
+      </div>
+      <div class="bond-card-top">
+        <div class="bond-content">
+          <div class="tag" style="background:rgba(50,180,80,0.15);color:#72e891;">3x Strong Grip</div>
+          <h3>RK Tile Bond</h3>
+          <p>High Adhesion Formula · 20kg</p>
+        </div>
+        <div class="bond-arrow"><i class="fa-solid fa-arrow-right-long"></i></div>
+      </div>
+    </div>
+
+    <div class="bond-card reveal" onclick="location.href='product-powerplus.html'">
+      <div class="coming-soon-tag">Most Selling</div>
+      <div class="bond-img-wrap">
+        <img src="images/powerplus-main.png" alt="PowerPlus Bond Bag">
+      </div>
+      <div class="bond-card-top">
+        <div class="bond-content">
+          <div class="tag" style="background:rgba(50,180,80,0.15);color:#72e891;">Strong Grip</div>
+          <h3>PowerPlus Bond</h3>
+          <p>General Purpose Tile Adhesive · 20kg</p>
+        </div>
+        <div class="bond-arrow"><i class="fa-solid fa-arrow-right-long"></i></div>
+      </div>
+    </div>
+
+    <div class="bond-card reveal" onclick="location.href='product-powerpak.html'">
+      <div class="coming-soon-tag">Coming Soon</div>
+      <div class="bond-img-wrap">
+        <img src="images/power pak.jpeg" alt="Power Pak Tile Bond Bag">
+      </div>
+      <div class="bond-card-top">
+        <div class="bond-content">
+          <div class="tag" style="background:rgba(50, 180, 80, 0.15);color:#72e891;">Stong Grip</div>
+          <h3>Power Pak Tile Bond</h3>
+          <p>General Purpose Tile Bond · 20kg</p>
+        </div>
+        <div class="bond-arrow"><i class="fa-solid fa-arrow-right-long"></i></div>
+      </div>
+    </div>
+
+    <div class="bond-card reveal" onclick="location.href='product-whitebond.html'">
+      <div class="coming-soon-tag">Coming Soon</div>
+      <div class="bond-img-wrap">
+        <img src="images/whitebond.png" alt="Power Pak White Bond">
+      </div>
+      <div class="bond-card-top">
+        <div class="bond-content">
+          <div class="tag" style="background:rgba(50, 180, 80, 0.15);color:#72e891;">White Bond</div>
+          <h3>Power Pak White Bond</h3>
+          <p>General Purpose White Bond · 20kg</p>
+        </div>
+        <div class="bond-arrow"><i class="fa-solid fa-arrow-right-long"></i></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <!-- ── FILING PANEL ── -->
+  <div id="panel-filing" class="panel">
+    <p style="text-align:center;color:var(--text-muted);margin-bottom:40px;font-size:14px;">
+      Click on any color to see filing details and best use applications.
+    </p>
+    <div class="filing-grid">
+
+      <!-- White -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#f5f5f5,#ddd);"></div>
+        <div class="filing-info"><h4>Pure White</h4><p>Classic · All tiles</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FW-01 · <strong>Finish:</strong> Smooth Matte<br>Perfect for white ceramic and marble tiles. Keeps joints clean and bright. Suitable for walls and floors.</div>
+      </div>
+
+      <!-- Black -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#000000,#2c2c2c);"></div>
+        <div class="filing-info"><h4>Black</h4><p>Deep · Granite & Dark Tiles</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FI-03 · <strong>Finish:</strong> Matte<br>A bold, deep black for dark granite, basalt, or slate tiles. Perfect for aggressive modern designs and luxury spaces.</div>
+      </div>
+
+      <!-- Light Gray -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#d3d3d3,#b0b0b0);"></div>
+        <div class="filing-info"><h4>Light Gray</h4><p>Clean · Ceramic & Porcelain</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FI-04 · <strong>Finish:</strong> Satin<br>A versatile cool gray that blends seamlessly with modern ceramic and light porcelain tiles. Ideal for high-traffic floor areas.</div>
+      </div>
+
+      <!-- Dark Gray -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#4a4a4a,#2f2f2f);"></div>
+        <div class="filing-info"><h4>Dark Gray</h4><p>Industrial · Stone & Concrete</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FI-05 · <strong>Finish:</strong> Matte<br>A heavy-duty charcoal tone suited for industrial concrete looks and dark grey natural stones. Excellent for outdoor or commercial use.</div>
+      </div>
+
+      <!-- pink -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#ffc0cb,#ffb6c1);"></div>
+        <div class="filing-info"><h4>Pink</h4><p>Soft · Decorative Tiles</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FI-10 · <strong>Finish:</strong> Satin<br>A gentle pastel pink ideal for decorative accents and specialized bathroom designs. Provides a unique, soft aesthetic for creative tiling projects.</div>
+      </div>
+
+      <!-- Light Blue -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#add8e6,#87cefa);"></div>
+        <div class="filing-info"><h4>Light Blue</h4><p>Cool · Glass & Spa</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FI-12 · <strong>Finish:</strong> Satin<br>A tranquil, icy blue designed for glass tiles and modern spa environments. Offers a clean, serene finish for light-filled rooms.</div>
+      </div>
+
+      <!-- Dark Blue -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#00008b,#000033);"></div>
+        <div class="filing-info"><h4>Dark Blue</h4><p>Bold · Oceanic & Accent</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FI-13 · <strong>Finish:</strong> Matte<br>A deep, aggressive navy for high-contrast accent walls and specialized pool designs. Provides a professional, premium industrial look.</div>
+      </div>
+
+      <!-- Sky Blue -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#87ceeb,#00bfff);"></div>
+        <div class="filing-info"><h4>Sky Blue</h4><p>Fresh · Mosaic & Pool</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FI-11 · <strong>Finish:</strong> Gloss<br>A vibrant, airy blue perfect for glass mosaics and swimming pool borders. Brings a clean, water-inspired freshness to aquatic and spa areas.</div>
+      </div>
+
+      <!-- Light Brown -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#a67b5b,#8b624a);"></div>
+        <div class="filing-info"><h4>Light Brown</h4><p>Natural · Oak & Timber</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FI-08 · <strong>Finish:</strong> Matte<br>A sandy, natural brown ideal for light wood-look planks and oak-style finishes. Mimics the organic tones of natural timber grain.</div>
+      </div>
+
+      <!-- Dark Brown -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#3e2723,#21130d);"></div>
+        <div class="filing-info"><h4>Dark Brown</h4><p>Deep · Walnut & Chocolate</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FI-09 · <strong>Finish:</strong> Satin<br>A rich, dark chocolate tone for walnut or dark mahogany wood tiles. Provides a high-contrast, premium look for executive interiors.</div>
+      </div>
+
+      <!-- Ivory -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#fffff0,#f0e8d0);"></div>
+        <div class="filing-info"><h4>Ivory</h4><p>Warm · Marble tiles</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FI-02 · <strong>Finish:</strong> Satin<br>Warm ivory tone for light marble and cream-coloured tiles. Elegant look for living rooms and bathrooms.</div>
+      </div>
+
+      <!-- Beige -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#f5e6c8,#d4b896);"></div>
+        <div class="filing-info"><h4>Beige</h4><p>Natural · Stone look</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FB-03 · <strong>Finish:</strong> Natural<br>Natural beige for travertine and stone-look tiles. Blends seamlessly with earthy tones.</div>
+      </div>
+
+      <!-- Silver Grey -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#c8c8c8,#909090);"></div>
+        <div class="filing-info"><h4>Silver Grey</h4><p>Modern · Porcelain</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FSG-04 · <strong>Finish:</strong> Semi-Gloss<br>Clean silver-grey for modern porcelain and grey tile settings. Popular in contemporary kitchens.</div>
+      </div>
+
+      <!-- Charcoal -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#555,#2a2a2a);"></div>
+        <div class="filing-info"><h4>Charcoal</h4><p>Bold · Dark tiles</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FC-05 · <strong>Finish:</strong> Matte<br>Strong charcoal for dark stone and slate tiles. Creates a dramatic contrast or seamless dark joint.</div>
+      </div>
+
+      <!-- Cement Grey -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#a0a0a0,#787878);"></div>
+        <div class="filing-info"><h4>Cement Grey</h4><p>Industrial · Quarry</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FCG-06 · <strong>Finish:</strong> Rough Natural<br>Industrial grey for quarry tiles and cement-look surfaces. Ideal for outdoor paving and driveways.</div>
+      </div>
+
+      <!-- Sandy Brown -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#c8a46e,#a07840);"></div>
+        <div class="filing-info"><h4>Sandy Brown</h4><p>Earthy · Outdoor</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FSB-07 · <strong>Finish:</strong> Granular<br>Sandy brown for outdoor pavers and garden tiles. Blends with natural landscape and terracotta.</div>
+      </div>
+
+      <!-- Terracotta -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#c0643c,#8b3a20);"></div>
+        <div class="filing-info"><h4>Terracotta</h4><p>Classic · Red tiles</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FT-08 · <strong>Finish:</strong> Matte<br>Rich terracotta for traditional red floor tiles and rustic-style spaces. Great for verandas and courtyards.</div>
+      </div>
+
+      <!-- Chocolate -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#7b4030,#4a2010);"></div>
+        <div class="filing-info"><h4>Chocolate</h4><p>Rich · Wooden look</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FCH-09 · <strong>Finish:</strong> Smooth<br>Deep chocolate brown for wood-effect porcelain and dark natural stone. Creates a luxurious finish.</div>
+      </div>
+
+      <!-- Black -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#2a2a2a,#000);"></div>
+        <div class="filing-info"><h4>Jet Black</h4><p>Luxury · Feature tiles</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FJB-10 · <strong>Finish:</strong> Semi-Gloss<br>Premium jet black for feature walls, dark marble, and high-contrast designer tile installations.</div>
+      </div>
+
+      <!-- Mint Green -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#90e0a0,#50c060);"></div>
+        <div class="filing-info"><h4>Mint Green</h4><p>Fresh · Kitchen tiles</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FMG-11 · <strong>Finish:</strong> Gloss<br>Fresh mint for colourful kitchen backsplash and bathroom tiles. Adds a vibrant, clean accent.</div>
+      </div>
+
+      <!-- Cobalt Blue -->
+      <div class="filing-card reveal" onclick="toggleFiling(this)">
+        <div class="filing-color" style="background:linear-gradient(135deg,#3060c0,#1030a0);"></div>
+        <div class="filing-info"><h4>Cobalt Blue</h4><p>Bold · Pool areas</p></div>
+        <div class="filing-expand"><strong>Code:</strong> FCB-12 · <strong>Finish:</strong> Gloss<br>Vibrant cobalt blue perfect for swimming pools, feature walls, and mosaic tile installations.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="features-section">
+  <div class="reveal">
+    <div class="section-label">Why Choose Power Pak</div>
+    <h2 class="section-title">Built for <span>Strength</span></h2>
+  </div>
+
+  <div class="features-grid">
+    <div class="feat-card reveal">
+      <div class="feat-icon"> <i class="fa-solid fa-dumbbell"></i></div>
+      <h3>Extra Strong Grip</h3>
+      <p>Our polymer-modified formula delivers superior bond strength that outlasts standard adhesives in every condition.</p>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon"> <i class="fa-solid fa-droplet"></i></div>
+      <h3>Water Resistant</h3>
+      <p>Moisture-proof formulations ensure tiles stay firmly bonded even in wet rooms, pools, and outdoor environments.</p>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon"> <i class="fa-solid fa-fire"></i></div>
+      <h3>Heat Resistant</h3>
+      <p>Specially designed to withstand Pakistan's extreme temperatures without cracking or losing adhesion.</p>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon"> <i class="fa-solid fa-hourglass-half"></i></div>
+      <h3>Long Lasting Bond</h3>
+      <p>Crack-resistant and durable — our adhesives are engineered to last decades without re-laying requirements.</p>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon"> <i class="fa-solid fa-code-branch"></i></div>
+      <h3>Flexible</h3>
+      <p>Our Bond is a high-strength adhesive designed for versatility and durability. It offers superior bonding performance while allowing flexibility for various surfaces and applications.</p>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon"> <i class="fa-solid fa-trophy"></i></div>
+      <h3>Quality</h3>
+      <p>Our Bond ensures premium quality with its strong adhesion, durability, and long-lasting performance. It is engineered for a reliable bond across various materials, providing a professional finish every time.</p>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon"> <i class="fa-solid fa-bolt"></i></div>
+      <h3>High-Performance Adhesives</h3>
+      <p>We offer a range of specially formulated tile adhesives that ensure strong, long-lasting bonds for various surfaces and tile types.</p>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+      <h3>Expert Technical Support</h3>
+      <p>Our knowledgeable team is available to provide guidance and assistance, helping you choose the right products and techniques for your specific projects.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="reveal">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Contact <span>Power Pak</span></h2>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-form reveal">
+      <h3><i class="fa-solid fa-message" style="margin-right:10px;"></i>Send Us a Message</h3>
+      <div class="form-group">
+        <input type="text" placeholder="Your Full Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Email Address" required>
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Company / Project Name">
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Tell us about your project requirements..."></textarea>
+      </div>
+      <button class="btn-submit">Send Message</button>
+    </div>
+
+    <div class="contact-info reveal">
+      <h3>Power Pak <span style="background:linear-gradient(90deg,var(--red),var(--orange));-webkit-background-clip:text;color:transparent;">Support Center</span></h3>
+
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+        <div class="info-text">
+          <h4>Email Us</h4>
+          <p>powerplusbond@gmail.com</p>
+          <p style="font-size:11px;margin-top:2px;">Response within 2–4 hours</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+        <div class="info-text">
+          <h4>Call / WhatsApp</h4>
+          <p>+92 300 2013334</p>
+          <p style="font-size:11px;margin-top:2px;">Mon – Sat · 9AM to 6PM</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-globe"></i></div>
+        <div class="info-text">
+          <h4>Website</h4>
+          <p>www.powerplus.pk</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="info-text">
+          <h4>Head Office</h4>
+          <p>33-A, Block C </p>
+          <p style="font-size:11px;margin-top:2px;">PCSIR Staff College Road Ameer Chowk, Lahore</p>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-box"><h2>24h</h2><p>Response Time</p></div>
+        <div class="stat-box"><h2>99%</h2><p>Satisfaction</p></div>
+        <div class="stat-box"><h2>500+</h2><p>Projects</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+        <h3>PowerPak Industries</h3>
+        <p>Premium construction adhesives and industrial-grade tile bonds. Engineered for maximum strength and durability.</p>
+        <p><strong>Phone:</strong> +92 300 2013334</p>
+        <p><strong>Email:</strong> powerplusbond@gmail.com</p>
+        <div class="footer-socials">
+            <a href="https://www.tiktok.com/@powerplustilebond" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/share/1EXA6axH22/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/923002013334" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://wa.me/923002013334" target="_blank" class="whatsapp-float"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Bond Products</a></li>
+            <li><a href="">Terms of Service</a></li>
+            <li><a href="">Privacy Policy</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-links">
+        <h4>Our Products</h4>
+        <ul>
+            <li><a href="product-powerplus.html">PowerPlus Bond</a></li>
+            <li><a href="product-rk.html">RK Tile Bond</a></li>
+            <li><a href="product-10x.html">10X Tile Bond</a></li>
+            <li><a href="product-max.html">MAX Tile Bond</a></li>
+        </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+        <p>&copy; 2026 Copyright <strong>PowerPak Industries</strong>. All Rights Reserved.</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
